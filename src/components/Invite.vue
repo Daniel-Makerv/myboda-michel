@@ -1,5 +1,5 @@
 <template>
-    <div @click="playMusic">
+    <div class="animate-fade-down">
         <!-- Sección de inicio -->
         <div class="relative h-screen w-full bg-cover bg-center"
             :style="{ backgroundImage: `url(${backgroundImage})` }">
@@ -7,7 +7,8 @@
                 <!-- Título -->
                 <h1
                     class="text-6xl sm:text-7xl font-extrabold font-cursive text-outline-plata leading-tight text-center">
-                    <span class="inline-block font-bold text-[#CFAF5A] script-font shadow-md">Michel</span>
+                    <span
+                        class="inline-block font-bold text-[#CFAF5A] script-font shadow-md animate-fade-down">Michel</span>
 
                     <!-- Para móviles: & en una línea separada -->
                     <span class="block sm:hidden text-boda-dorado text-5xl">&</span>
@@ -35,6 +36,8 @@
                 </div>
 
                 <p class="mt-6 text-lg font-semibold">Faltan</p>
+
+                <!-- Contador -->
                 <div class="flex space-x-3 mt-4">
                     <div v-for="(time, label) in countdown" :key="label"
                         class="bg-[#f4e0d6] px-4 py-2 rounded-lg text-center text-[#6c4f4b] shadow-md">
@@ -42,8 +45,15 @@
                         <p class="text-xs uppercase">{{ label }}</p>
                     </div>
                 </div>
+
+                <!-- Reproductor de audio debajo del contador -->
+                <div class="audio-player mt-6">
+                    <audio ref="audio" :src="audioSrc" controls></audio>
+                </div>
             </div>
         </div>
+
+
         <!--  -->
         <!-- section padres  -->
         <div class="bg-pink-50 flex items-center justify-center p-6">
@@ -291,6 +301,7 @@ export default {
         return {
             audio: null,
             isPlaying: false,
+            audioSrc: '/music/trimmed_audio.mp3', // Ruta del archivo de audio
 
             imageUrl: '/images/WhatsApp Image 2025-02-04 at 23.13.36 (1).jpeg', // Reemplaza con la URL correcta de la imagen de la pareja
 
@@ -334,14 +345,12 @@ export default {
             window.open(url, "_blank");
         },
         playMusic() {
-            if (!this.audio) {
-                this.audio = new Audio('/music/trimmed_audio.mp3');
-                this.audio.loop = true;
+            const audioElement = this.$refs.audio;
+            if (audioElement.paused) {
+                audioElement.play();
+            } else {
+                audioElement.pause();
             }
-
-            this.audio.play().catch(error => {
-                console.error('Error al reproducir:', error);
-            });
         },
     },
 };
