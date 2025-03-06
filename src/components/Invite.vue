@@ -47,7 +47,7 @@
                 </div>
 
                 <!-- Reproductor de audio debajo del contador -->
-                <div class="audio-player mt-6">
+                <div class="audio-player mt-6 ml-6">
                     <audio ref="audio" :src="audioSrc" controls></audio>
                 </div>
             </div>
