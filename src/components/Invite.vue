@@ -23,9 +23,11 @@
                     Casamos!</p>
 
                 <!-- Imagen Circular -->
-                <div class="w-36 h-36 sm:w-48 sm:h-48 mt-6 rounded-full overflow-hidden border-4 border-[#f4e0d6]">
-                    <img :src="imageUrl" alt="Boda" class="w-full h-full object-cover">
+                <div
+                    class="w-36 h-36 sm:w-48 sm:h-48 mt-6 rounded-full overflow-hidden border-4 border-[#f4e0d6] aspect-w-1 aspect-h-1">
+                    <img :src="imageUrl" alt="Boda" class="w-full h-full object-cover object-center">
                 </div>
+
 
                 <!-- Sección de Fecha -->
                 <div class="max-w-xs w-full mt-4 bg-[#f4e0d6] py-3 px-6 rounded-lg text-center shadow-lg">
@@ -33,6 +35,10 @@
                     <p class="text-4xl font-bold text-[#6c4f4b]">26</p>
                     <p class="text-sm text-gray-700 uppercase">ABRIL</p>
                     <p class="text-sm text-gray-700">A LAS 04:00 PM</p>
+                    <div class="audio-player mt-6 mb-6 sm:mb-4 sm:mt-4">
+                        <audio ref="audio" :src="audioSrc" controls class="audio-player-small"></audio>
+                    </div>
+
                 </div>
 
                 <p class="mt-6 text-lg font-semibold">Faltan</p>
@@ -47,16 +53,11 @@
                 </div>
 
                 <!-- Reproductor de audio debajo del contador -->
-                <div class="audio-player mt-6 ml-6">
-                    <audio ref="audio" :src="audioSrc" controls></audio>
-                </div>
+
             </div>
         </div>
-
-
-        <!--  -->
         <!-- section padres  -->
-        <div class="bg-pink-50 flex items-center justify-center p-6">
+        <div class="bg-pink-50 flex items-center justify-center p-6 ">
             <div class="bg-white shadow-lg p-8 rounded-lg w-full text-center relative">
                 <!-- Decoración superior -->
                 <div class="absolute top-0 left-0 w-16 h-18">
@@ -398,5 +399,10 @@ body {
     font-size: 2rem;
     color: white;
     text-shadow: 0 0 10px rgb(240, 240, 255), 0 0 20px rgb(213, 213, 237), 0 0 30px rgb(213, 213, 237), 0 0 40px rgb(213, 213, 237);
+}
+
+.audio-player-small {
+    width: 255px;
+    /* Ajusta el tamaño según tus necesidades */
 }
 </style>
