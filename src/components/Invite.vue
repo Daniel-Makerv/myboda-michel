@@ -53,7 +53,7 @@
                 </div>
 
                 <!-- Reproductor de audio debajo del contador -->
-
+                <br>
             </div>
         </div>
         <!-- section padres  -->
