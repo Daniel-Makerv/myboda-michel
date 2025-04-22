@@ -81,6 +81,18 @@
                     </p>
                 </div>
 
+                 <!-- Padres de la novia -->
+                 <div class="mt-2 ml-2">
+                    <h3 class="text-lg font-semibold">PADRES DEL NOVIO</h3>
+                    <p class="italic text-xl font-light">
+                        <span class="font-cursive">M. de Jesús </span>
+                    </p>
+                    <p class="italic text-xl font-light flex items-center justify-center gap-2 mt-2 ml-2">
+                        <span class="text-black">&</span>
+                        <span class="font-cursive">Hipólito.</span>
+                    </p>
+                </div>
+
                 <!-- Separador con texto -->
                 <div class="my-26 w-full h-auto bg-gray-200 rounded-md flex items-center justify-center mt-2 ml-2">
                     <span class="text-1xl font-semibold uppercase text-pink-600 font-lovedbytheking text-center">
@@ -90,13 +102,13 @@
                 </div>
                 <!-- Padres del novio -->
                 <div class="mt-2">
-                    <h3 class="text-lg font-semibold">PADRES DEL NOVIO</h3>
+                    <h3 class="text-lg font-semibold">PADRINOS DE VELACIÓN</h3>
                     <p class="italic text-xl font-light">
-                        <span class="font-cursive">M. de Jesús</span>
+                        <span class="font-cursive">M. Del Carmen</span>
                     </p>
                     <p class="italic text-xl font-light flex items-center justify-center gap-2">
                         <span class="text-black">&</span>
-                        <span class="font-cursive">Hipólito</span>
+                        <span class="font-cursive">Humberto</span>
                     </p>
                 </div>
 
